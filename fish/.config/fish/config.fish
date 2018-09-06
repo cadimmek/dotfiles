@@ -8,7 +8,7 @@ end
 
 
 function dri
-    docker rmi $@ (docker images -q);
+    docker rmi $argv (docker images -q);
 end
 
 function drc
