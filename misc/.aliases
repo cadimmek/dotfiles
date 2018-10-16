@@ -14,3 +14,9 @@ alias .5='cd ../../../../..'
 
 # Resume wget by default
 alias wget='wget -c'
+
+alias update='sudo apt-get update && sudo apt-get upgrade'
+
+alias dps='docker ps -a --no-trunc'
+alias dex='docker exec -i -t'
+
