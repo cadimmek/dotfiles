@@ -18,9 +18,8 @@ function rst() {
 #
 # # ex - archive extractor
 # # usage: ex <file>
-ex ()
-{
-  if [ -f $1 ] ; then
+function ex() {
+  if [[ -f $1 ]] ; then
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
@@ -41,7 +40,7 @@ ex ()
 }
 
 
-colors() {
+function colors() {
         local fgc bgc vals seq0
 
         printf "Color escapes are %s\n" '\e[${value};...;${value}m'

@@ -9,6 +9,10 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias more=less
 
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../.."
