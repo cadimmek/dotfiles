@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 alias _="sudo"
 
 alias cls='clear'
