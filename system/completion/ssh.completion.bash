@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
 
 _sshcomplete() {
     local CURRENT_PROMPT="${COMP_WORDS[COMP_CWORD]}"
