@@ -58,6 +58,13 @@ if [[ -d ~/dotfiles ]]; then
     done
 fi
 
+
+if [[ -d ~/Projects/ ]]; then
+  for i in $(find ~/Projects -type d -name ".env" -exec find {} -type f -name "*.bash" \;); do
+    [[ -f "${i}" ]] && source "${i}"
+  done
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/${USER}/.sdkman"
+export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
