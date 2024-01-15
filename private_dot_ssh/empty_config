@@ -1,0 +1,7 @@
+AddKeysToAgent yes
+
+Include config.d/*
+
+Host *
+  IdentitiesOnly yes
+  SendEnv LANG LC_*
