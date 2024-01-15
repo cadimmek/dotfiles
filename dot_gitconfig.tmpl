@@ -1,0 +1,16 @@
+[user]
+	name = Carsten Dimmek
+	email = carsten.dimmek@gmail.com
+[init]
+	defaultBranch = "main"
+
+[pull]
+	rebase = true
+
+[fetch]
+	prune
+
+{{- if not (eq .chezmoi.os "windows") }}
+[includeIf "gitdir:~/projects/work/**/*"]
+	path = ~/.gitconfig-work	
+{{- end }}

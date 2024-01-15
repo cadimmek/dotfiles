@@ -1,0 +1,25 @@
+# Enable aliases to be sudoed
+alias sudo='sudo '
+
+if [ $UID -ne 0 ]; then
+
+    alias reboot='sudo reboot'
+
+    DISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]')
+    case "$DISTRO" in
+    debian | ubuntu*)
+        alias update='sudo apt-get upgrade'
+        ;;
+    manjarolinux*)
+        alias update='sudo pacman -Syu'
+        ;;
+    *) ;;
+    esac
+fi
+
+# Create aliases with docker containers when commands not exist
+if command -v "docker" &> /dev/null; then
+    if ! command -v "htpasswd"; then
+	alias htpasswd='docker pull httpd:latest &> /dev/null;docker run --rm -it httpd:latest /usr/local/apache2/bin/htpasswd'    
+    fi	    
+fi	
